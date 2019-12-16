@@ -1,4 +1,4 @@
-# **tf-module-bucket-launch_template**
+# **tf-module-launch_template**
 
 Módulo Terraform para criação ***Launch Template***.
 
