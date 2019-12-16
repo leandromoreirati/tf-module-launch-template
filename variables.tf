@@ -19,7 +19,7 @@ variable "private_subnet" {
   description = "Subnet ID "
 }
 
-variable "security_group_id" {
+variable "security_groups_id" {
   default = []
   description = "A list of security group IDs to associate."
 }
