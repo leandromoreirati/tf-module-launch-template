@@ -44,11 +44,10 @@ module "launch_template" {
   resource_type         = "${var.resource_type}"
 
   tags = {
-    "Name"           = "${var.my_team}-${var.product}-${var.environment}"
-    "Application"    = "${var.my_team}-${var.product}"
-    "Environment"    = "${var.environment}"
-    "Service_type"   = "${var.service_type}"
-    "Business_owner" = "${var.business_owner}"
+    "tag01"    = "value01"
+    "tag02"    = "value02"
+    "tag03"    = "value03"
+    "tagN"     = "valueN"
   }
 
 }
