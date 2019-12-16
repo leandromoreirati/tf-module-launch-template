@@ -33,8 +33,8 @@ resource "aws_launch_template" "launch_template" {
   network_interfaces {    
     subnet_id = "${var.private_subnet}"
     security_groups = [
-                       "${var.security_group_id}"
-    ]
+                       "${var.security_groups_id}"
+                      ]
     associate_public_ip_address = "${var.public_ip_association}"
     delete_on_termination = "${var.delete_on_termination}"
   }
