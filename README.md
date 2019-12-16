@@ -2,12 +2,6 @@
 
 Módulo Terraform para criação ***Launch Template***.
 
-Por default a criação de objetos no bucket esta desabilitada, para ativa-la basta configurar no modulo a variável:
-
- ```
- create_object = true
- ```
-
   **Requisitos**
  - Terraform
  - AWS Account
