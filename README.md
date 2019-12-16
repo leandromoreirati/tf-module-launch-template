@@ -34,6 +34,7 @@ module "launch_template" {
   device_name           = "${var.device_name}"
   delete_on_termination = "${var.delete_on_termination}"
   resource_type         = "${var.resource_type}"
+  security_groups_id    = ["${module.security_group.security_group_id}"]
 
   tags = {
     "tag01"    = "value01"
