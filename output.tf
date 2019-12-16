@@ -16,10 +16,3 @@ output "launch_template_name" {
 output "launch_template_id" {
   value = "${aws_launch_template.launch_template.id}"
 }
-
-
-/* SECURITY GROUP */
-
-output "security_group" {
-  value = "${aws_security_group.security_group.id}"
-}
