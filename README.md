@@ -21,19 +21,17 @@ Por default a criação de objetos no bucket esta desabilitada, para ativa-la ba
  ------
 ```
 module "launch_template" {
-  source = "../launchTemplate"
+  source = "https://github.com/leandromoreirati/tf-module-launch_template.git"
 
   name       = "${var.my_team}-${var.product}-${var.environment}"
 
   vpc_id                = "${var.vpc_id}"
   azs                   = "${var.azs}"
   private_subnet        = "${var.private_subnet}"
+  security_group_id     = "${var.security_group_id}"
   tenancy               = "${var.tenancy}"
   monitoring            = "${var.monitoring}"
   public_ip_association = "${var.public_ip_association}"
-  my_team               = "${var.my_team}"
-  product               = "${var.product}"
-  environment           = "${var.environment}"
   ami                   = "${var.ami}" 
   instance_type         = "${var.instance_type}"
   key_name              = "${var.key_name}"
