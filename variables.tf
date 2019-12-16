@@ -19,6 +19,11 @@ variable "private_subnet" {
   description = "Subnet ID "
 }
 
+variable "security_group_id" {
+  default = []
+  description = "A list of security group IDs to associate."
+}
+
 variable "tenancy" {
   default = "default"
   description = "The tenancy of the instance (if the instance is running in a VPC). Can be default, dedicated, or host."
