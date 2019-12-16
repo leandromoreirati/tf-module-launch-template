@@ -17,7 +17,7 @@ Por default a criação de objetos no bucket esta desabilitada, para ativa-la ba
  - IAM Role
  - IAM Instance Profile
 
-**Criando um Bucket no S3**
+**Exemplo de Uso**
  ------
 ```
 module "launch_template" {
@@ -54,8 +54,6 @@ module "launch_template" {
 }
 
 ```
-
-
  **Variáveis**
  ------
  |         Nome         |                      Descrição                                                |  Default  |
