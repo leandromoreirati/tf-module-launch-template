@@ -2,7 +2,7 @@
 
 # **tf-module-launch-template**
 
-Terraform module for creation *** Launch Template ***.
+Terraform module for creation ***Launch Template***.
 
 **Requirements**
   - Terraform
