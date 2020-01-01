@@ -1,23 +1,25 @@
-# **tf-module-launch_template**
+![alt text](https://www.terraform.io/assets/images/logo-hashicorp-3f10732f.svg)
 
-Módulo Terraform para criação ***Launch Template***.
+# **tf-module-launch-template**
 
-  **Requisitos**
- - Terraform
- - AWS Account
+Terraform module for creation *** Launch Template ***.
+
+**Requirements**
+  - Terraform
+  - AWS Account
   
-**Dependências**
+**Dependencies**
  - Security Group
  - IAM Role
  - IAM Instance Profile
 
-**Exemplo de Uso**
+**Example of Use**
  ------
 ```
 module "launch_template" {
   source = "https://github.com/leandromoreirati/tf-module-launch_template.git"
 
-  name       = "${var.my_team}-${var.product}-${var.environment}"
+  name       = "<RESOURCE_NAME>"
 
   vpc_id                = "${var.vpc_id}"
   azs                   = "${var.azs}"
@@ -46,27 +48,27 @@ module "launch_template" {
 }
 
 ```
- **Variáveis**
+ **Variables**
  ------
- |         Nome         |                      Descrição                                                |  Default  |
- | -------------------- |-------------------------------------------------------------------------------|:---------:|
- | vpc_id               | ID da VPC                                                                     |    ""     |
- | azs                  | Zonas de disponibilidade                                                      |    ""     |
- | private_subnet       | ID das subnets                                                                |    ""     |
- | tenancy              | Tipo de alocação da instância                                                 |  default  |
- | monitoring           | Habilita o monitoramendo da instâncias                                        |   false   |
- | ami                  | ID da AMI                                                                     |    ""     |
- | instance_type        | Tipo de instância                                                             |    ""     |
- | key_name             | Nome da Key Pair                                                              |    ""     |
- | volume_size          | Tamanho do volume a ser alocado na instância                                  |     8     |
- | volume_type          | Tipo do volume a ser alocado na instâncias                                    |    gp2    |
- | device_name          | Mount point do volume a ser alocado na instância                              | /dev/sda1 |
- | delete_on_termination| Define se o volume será destruído após a finalização da instância             |   false   |
- | resource_type        | Tipo de recuros que receberá a tag                                            |  instance |
+ |         Name         |                            Description                                 |  Default  |
+ | -------------------- |------------------------------------------------------------------------|:---------:|
+ | vpc_id               | VPC ID                                                                 |    ""     |
+ | azs                  | Availability Zones                                                     |    ""     |
+ | private_subnet       | Subnets ID                                                             |    ""     |
+ | tenancy              | Instance Allocation Type                                               |  default  |
+ | monitoring           | Enables instance monitoring                                            |   false   |
+ | ami                  | AMI ID                                                                 |    ""     |
+ | instance_type        | Instance Type                                                          |    ""     |
+ | key_name             | Key Pair Name                                                          |    ""     |
+ | volume_size          | Size of volume to allocate on instance                                 |    "8"    |
+ | volume_type          | Type of volume to be allocated on instances                            |   "gp2"   |
+ | device_name          | Mount point of volume to be allocated on instance                      |"/dev/sda1"|
+ | delete_on_termination| Defines whether the volume will be destroyed after instance termination|   false   |
+ | resource_type        | Type of features the tag will receive                                  | "instance"|
 
  **Outputs**
  ------
- |           Nome         |                   Valor                            |
+ |           Name         |                   Value                            |
  | ---------------------- |:--------------------------------------------------:|
  | launch_template_arn    | aws_launch_template.launch_template.arn            |
  | launch_template_version| aws_launch_template.launch_template.latest_version |
@@ -74,11 +76,11 @@ module "launch_template" {
  | launch_template_id     | aws_launch_template.launch_template.id             |
  | security_group         | aws_security_group.security_group.id               |
 
- **Documentação externa**
- - [Execução de uma instância a partir de um modelo de execução](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/ec2-launch-templates.html)
+ **External Documentation**
+ - [Running an instance from an execution model](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/ec2-launch-templates.html)
  - [Terraform Launch Template](https://www.terraform.io/docs/providers/aws/r/launch_template.html)
 
- **Recursos Criados**
+ **Created Resources**
  ------
  - IAM Role
  - IAM Instance Profile
